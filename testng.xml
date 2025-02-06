@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="API Testing">
+    <listeners>
+        <listener class-name="Listener.Listener" />
+    </listeners>
+    <parameter name="BaseURI" value="http://localhost:8080/" />
+    <test  name="GomSpace">
+        <classes>
+            <class name="FundTransfer.API.FundTransferTest"/>
+        </classes>
+    </test>
+</suite>
