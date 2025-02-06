@@ -1,8 +1,11 @@
 package FundTransfer.API;
 
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import java.util.ArrayList;
 import static io.restassured.RestAssured.given;
@@ -13,6 +16,11 @@ public class FundTransferTest {
 
     ArrayList<String> CreditAccountId = new ArrayList<String>();
 
+    @BeforeTest
+    @Parameters("BaseURI")
+    public void setup(String BaseURI) {
+        RestAssured.baseURI = BaseURI;
+    }
     /*
     Account Not Found
      */
